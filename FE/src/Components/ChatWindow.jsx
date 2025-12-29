@@ -19,7 +19,7 @@ const ChatWindow = ({ showNamePopup, userName }) => {
                     <ChatMessageList userName={userName}  messages={messages} />
 
                     {/* chat textarea */}
-                    <ChatTextarea text={text} setText={setText} setMessages={setMessages} />
+                    <ChatTextarea text={text} setText={setText} setMessages={setMessages} userName={userName} />
                 </div>
             )}
         </>

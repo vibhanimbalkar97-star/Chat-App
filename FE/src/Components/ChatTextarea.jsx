@@ -1,4 +1,4 @@
-const ChatTextarea = ({ text, setText, setMessages }) => {
+const ChatTextarea = ({ text, setText, setMessages, userName }) => {
 
     // Send message function
     const sendMessage = () => {
