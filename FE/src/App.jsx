@@ -1,17 +1,19 @@
 import { useState } from "react";
 import ChatWindow from "./Components/ChatWindow"
 import JoinChatForm from "./Components/JoinChatForm"
+import { ChatProvider } from "./ChatContext";
 
 function App() {
-const [showNamePopup, setShowNamePopup] = useState(true);
-const [userName, setUserName] = useState('');
+
 
   return (
+    <ChatProvider>
     <div className="min-h-screen flex items-center justify-center bg-zinc-100 p-4 font-inter">
- <JoinChatForm showNamePopup={showNamePopup} setShowNamePopup={setShowNamePopup} setUserName={setUserName}/>
- <ChatWindow showNamePopup={showNamePopup} userName={userName}  />
+ <JoinChatForm />
+ <ChatWindow />
    
     </div>
+    </ChatProvider>
   )
 }
 

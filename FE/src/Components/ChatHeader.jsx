@@ -1,4 +1,8 @@
-const ChatHeader = ({ userName }) => {
+import { useChat } from "../ChatContext";
+
+const ChatHeader = () => {
+   
+  const { userName } = useChat();
 
     return (
         <div className='flex items-center gap-3 px-4 py-3 border-b border-gray-200'>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useChat } from '../ChatContext';
 
-const JoinChatForm = ({ showNamePopup, setShowNamePopup, setUserName }) => {
+const JoinChatForm = () => {
+
+  const { showNamePopup, setShowNamePopup, setUserName } = useChat();
 
   const [inputName, setInputName] = useState('');
   

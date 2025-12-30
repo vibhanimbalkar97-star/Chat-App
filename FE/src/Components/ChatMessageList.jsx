@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useChat } from '../ChatContext';
 
-const ChatMessageList = ({ userName, messages }) => {
+const ChatMessageList = () => {
 
-   
+   const { userName, messages } = useChat();
 
     // Format Timestamp to HH:MM for messages
     const formatTime = (ts) => {

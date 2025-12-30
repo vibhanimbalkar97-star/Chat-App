@@ -1,4 +1,8 @@
-const ChatTextarea = ({ text, setText, setMessages, userName }) => {
+import { useChat } from "../ChatContext";
+
+const ChatTextarea = () => {
+
+    const { text, setText, setMessages, userName } = useChat();
 
     // Send message function
     const sendMessage = () => {
