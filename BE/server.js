@@ -11,8 +11,17 @@ const io = new Server(server, {
     },
 })
 
+const ROOM = 'group'
+
 io.on('connection', (socket) => {
     console.log('a user connected', socket.id)
+
+    // join the user
+    socket.on('joinRoom', async (userName) => {
+       console.log(`${userName} is joined chat`)
+       await socket.join(ROOM)
+    })
+
 })
 
 app.get('/', (req, res) => {

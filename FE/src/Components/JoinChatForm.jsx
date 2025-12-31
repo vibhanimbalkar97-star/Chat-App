@@ -3,7 +3,7 @@ import { useChat } from '../ChatContext';
 
 const JoinChatForm = () => {
 
-  const { showNamePopup, setShowNamePopup, setUserName } = useChat();
+  const { showNamePopup, setShowNamePopup, setUserName, socket } = useChat();
 
   const [inputName, setInputName] = useState('');
   
@@ -11,6 +11,9 @@ const JoinChatForm = () => {
     e.preventDefault();
     const trimmed = inputName.trim();
     if (!trimmed) return;
+
+    // user join chat or send join event to server
+    socket.current.emit('joinRoom',trimmed);
 
     setUserName(trimmed)
     setShowNamePopup(false)
