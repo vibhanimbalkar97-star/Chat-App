@@ -2,7 +2,7 @@ import { useChat } from "../ChatContext";
 
 const ChatTextarea = () => {
 
-    const { text, setText, setMessages, userName } = useChat();
+    const { text, setText, setMessages, userName, socket } = useChat();
 
     // Send message function
     const sendMessage = () => {
@@ -17,6 +17,9 @@ const ChatTextarea = () => {
             ts: Date.now(),
         };
         setMessages((m) => [...m, msg])
+
+        // emit 
+        socket.current.emit('chatMessage', msg)
         setText('');
     }
 

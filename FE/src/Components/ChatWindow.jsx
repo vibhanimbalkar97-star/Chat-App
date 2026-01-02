@@ -6,20 +6,20 @@ import { useChat } from '../ChatContext';
 
 const ChatWindow = () => {
 
-    const { showNamePopup } = useChat();          
+    const { showNamePopup } = useChat();
 
     return (
         <>
             {!showNamePopup && (
                 <div className='w-full max-w-2xl h-[90vh] bg-white rounded-xl shadow-md flex flex-col overflow-hidden'>
                     {/* Chat header */}
-                    <ChatHeader  />
+                    <ChatHeader />
 
                     {/*Chat Message List  */}
                     <ChatMessageList />
 
                     {/* chat textarea */}
-                    <ChatTextarea  />
+                    <ChatTextarea />
                 </div>
             )}
         </>
