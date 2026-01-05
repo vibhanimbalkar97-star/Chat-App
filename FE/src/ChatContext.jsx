@@ -42,14 +42,16 @@ export const ChatProvider = ({ children }) => {
       socket.current.on('stopTyping', (userName) => {
         setTypers(typers.filter((typer) => typer !== userName))
       })
-    })
 
-    // remove listener
+      // CLEANUP ON UNMOUNT
+    return () => {
     socket.current.off('roomNotice');
     socket.current.off('chatMessage');
     socket.current.off('typing');
     socket.current.off('stopTyping');
-
+    socket.current.disconnect();
+    }
+    })
   }, [])
 
 

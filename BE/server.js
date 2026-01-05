@@ -2,11 +2,13 @@ import express from 'express';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: '*',
+        origin: 'https://chatapp-steel-five.vercel.app',
+        methods: ['GET', 'POST'],
     },
 })
 
@@ -35,6 +37,6 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(3000, () => {
-    console.log('server running at 3000')
-})
+server.listen(PORT, () => {
+  console.log('server running on port', PORT);
+});

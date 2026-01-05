@@ -1,5 +1,7 @@
 import { io } from "socket.io-client"
 
 export const connectWs = () => {
-    return io('http://localhost:3000/')
+    return io(import.meta.env.VITE_SOCKET_URL, {
+    transports: ["websocket", "polling"],
+  });
 }
