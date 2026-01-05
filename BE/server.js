@@ -7,7 +7,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://chatapp-steel-five.vercel.app',
+        origin: 'https://chat-app-navy-five-98.vercel.app/',
         methods: ['GET', 'POST'],
     },
 })
